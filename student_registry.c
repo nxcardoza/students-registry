@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 #include "student_registry.h"
 
 //add student
@@ -118,4 +119,70 @@ void displayStudents(Student list[], int total)
         printf("GPA: %.2f\n", list[i].studentGpa);
         printf("Credits: %d\n", list[i].studentCredits);
     }
+}
+
+// save all students to file
+void saveStudentsToFile(Student list[], int total)
+{
+    FILE *file = fopen("students.txt", "w");
+
+    if(file == NULL)
+    {
+        printf("Error: Cannot open file for saving.\n");
+        return;
+    }
+
+    for(int i = 0; i < total; i++)
+    {
+        fprintf(file, "%d|%s|%s|%.2f|%d\n",
+                list[i].studentId,
+                list[i].studentName,
+                list[i].studentMajor,
+                list[i].studentGpa,
+                list[i].studentCredits);
+    }
+
+    fclose(file);
+    printf("Saved %d student(s) to file.\n", total);
+}
+
+// load all students from file
+int loadStudentsFromFile(Student list[])
+{
+    FILE *file = fopen("students.txt", "r");
+
+    if(file == NULL)
+    {
+        printf("No existing data file has been found.\n");
+        return 0;
+    }
+
+    char line[300];
+    int total = 0;
+
+    while(fgets(line, sizeof(line), file) != NULL && total < MAX_STUDENTS)
+    {
+        char *token;
+
+        token = strtok(line, "|");
+        list[total].studentId = atoi(token);
+
+        token = strtok(NULL, "|");
+        strcpy(list[total].studentName, token);
+
+        token = strtok(NULL, "|");
+        strcpy(list[total].studentMajor, token);
+
+        token = strtok(NULL, "|");
+        list[total].studentGpa = atof(token);
+
+        token = strtok(NULL, "|\n");
+        list[total].studentCredits = atoi(token);
+
+        total++;
+    }
+
+    fclose(file);
+    printf("Loaded %d student(s) from file.\n", total);
+    return total;
 }
