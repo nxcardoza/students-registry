@@ -17,4 +17,7 @@ void findByGPA(Student list[], int total);
 void findByMajor(Student list[], int total);
 void displayStudents(Student list[], int total);
 
+void saveStudentsToFile(Student list[], int total);
+int loadStudentsFromFile(Student list[]);
+
 #endif
