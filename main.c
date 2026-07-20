@@ -1,16 +1,12 @@
 #include <stdio.h>
 #include <string.h>
-#include <student_registry.h>
-
-#define MAX_STUDENTS 100
-
-// variables
+#include "student_registry.h"
 
 int main()
 {
     int choice;
-    int total = 0;
-    Student list[MAX_STUDENTS];
+    Student list[MAX_STUDENTS];[cite: 3]
+int total = loadStudentsFromFile(list);[cite: 2]
 
     do
     {
@@ -48,6 +44,7 @@ int main()
                 break;
 
             case 6:
+                saveStudentsToFile(list, total);
                 printf("Thank you for your service.\n");
                 break;
 
@@ -59,4 +56,3 @@ int main()
 
     return 0;
 }
-
