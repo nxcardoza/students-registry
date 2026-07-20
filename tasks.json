@@ -1,0 +1,43 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build student registry",
+      "type": "shell",
+      "command": "gcc",
+      "args": [
+        "main.c",
+        "student_registry.c",
+        "-o",
+        "registry.exe"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "type": "cmake",
+      "label": "CMake: configure",
+      "command": "configure",
+      "problemMatcher": [],
+      "detail": "CMake template configure task",
+      "group": "build"
+    },
+    {
+      "type": "cmake",
+      "label": "CMake: build",
+      "command": "build",
+      "targets": [
+        "[N/A - Select Kit]"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [],
+      "detail": "CMake template build task"
+    }
+  ]
+}
