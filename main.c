@@ -10,16 +10,18 @@ int total = loadStudentsFromFile(list);[cite: 2]
 
     do
     {
-        printf("DR. SANTOS STUDENT REGISTRY\n\n");
+       	printf("\n");
+        printf("DR. SANTOS' STUDENT REGISTRY\n\n");
         printf("1. Add a Student\n");
         printf("2. Search by ID\n");
         printf("3. Search by GPA\n");
         printf("4. Search by Major\n");
         printf("5. Display All Students\n");
-        printf("6. Exit\n");
-
+        printf("6. Save and Exit\n");
+printf("\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
+printf("\n");
 
         switch(choice)
         {
