@@ -1,7 +1,7 @@
 #ifndef STUDENT_REGISTRY_H 
 #define STUDENT_REGISTRY_H 
 
-#define MAX_STUDENTS 100
+#define MAX_STUDENTS 10
 
 typedef struct {
     int studentId;
