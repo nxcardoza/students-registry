@@ -8,6 +8,7 @@ void addStudent(Student list[], int *total)
 {
     if(*total == MAX_STUDENTS)
     {
+        printf("\n");
         printf("Student list is full.\n");
         return;
     }
