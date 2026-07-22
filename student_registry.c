@@ -124,7 +124,7 @@ void displayStudents(Student list[], int total)
 // save all students to file
 void saveStudentsToFile(Student list[], int total)
 {
-    FILE *file = fopen("students.txt", "w");
+    FILE *file = fopen("students.dat", "w");
 
     if(file == NULL)
     {
@@ -149,7 +149,7 @@ void saveStudentsToFile(Student list[], int total)
 // load all students from file
 int loadStudentsFromFile(Student list[])
 {
-    FILE *file = fopen("students.txt", "r");
+    FILE *file = fopen("students.dat", "r");
 
     if(file == NULL)
     {
