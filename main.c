@@ -10,7 +10,7 @@ int total = loadStudentsFromFile(list);[cite: 2]
 
     do
     {
-        printf("STUDENT REGISTRY\n\n");
+        printf("DR. SANTOS STUDENT REGISTRY\n\n");
         printf("1. Add a Student\n");
         printf("2. Search by ID\n");
         printf("3. Search by GPA\n");
