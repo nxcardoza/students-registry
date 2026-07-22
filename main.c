@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <string.h>https://github.com/nxcardoza/students-registry/blob/main/main.c
+#include <string.h>
 #include "student_registry.h"
 
 int main()
