@@ -1,12 +1,12 @@
 #include <stdio.h>
-#include <string.h>
+#include <string.h>https://github.com/nxcardoza/students-registry/blob/main/main.c
 #include "student_registry.h"
 
 int main()
 {
     int choice;
-    Student list[MAX_STUDENTS];[cite: 3]
-int total = loadStudentsFromFile(list);[cite: 2]
+    Student list[MAX_STUDENTS];
+int total = loadStudentsFromFile(list);
 
     do
     {
